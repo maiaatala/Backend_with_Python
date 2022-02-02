@@ -4,7 +4,7 @@ from base import Base
 
 # many books to one author
 # many books to many categories
-# many books to many publishers
+# many books to one publishers
 class Book(Base):
     __tablename__ = 'books'
 

@@ -18,9 +18,9 @@ def init_db(engine):
     Base = declarative_base()
 
     class Game(Base):
-        __tablename__ = 'users' # obrigatorios, nome da tabela
+        __tablename__ = 'users' # obligatory table name
 
-        id = Column(Integer, primary_key=True)  # nome da coluna =  tipo e se é primary_key ou não
+        id = Column(Integer, primary_key=True)  # name of column = type (if it is  primary key, unique, nullable, foreign key)
         name = Column(String(50), nullable=False)
         category = Column(String(50))
         rank = Column(Float)
@@ -29,11 +29,11 @@ def init_db(engine):
         def __repr__(self):
             return (f"<User(name={self.name}, category={self.category}, Rank={self.rank}, preço={self.price})")
 
-    ''' criar a tabela no banco de dados '''
-    # precisa ser apos a declaração das tabelas.
-    Base.metadata.create_all(engine) # comunica com a engine (que ta ligada ao banco de dado) para criar as tabelas
+    ''' creating table on database '''
+    # needs to be declared after the tables
+    Base.metadata.create_all(engine) # communicates with the engine (previously connected to the database) to create said tables.
 
-    return Game
+    return Game #returns the game object that will be needed to create or manipulate the database entries
 
 def create(session, Game):
     # input of the entry
@@ -102,4 +102,4 @@ def delete(session, Game):
         session.commit()
         print("--Game deleted from database!--")
     else:
-        print("--Lucky you, game was never here--")
+        print("--Lucky you, the game was never here--")
