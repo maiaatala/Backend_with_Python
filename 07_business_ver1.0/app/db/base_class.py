@@ -19,7 +19,7 @@ def generate_uuid():  # function that will generate an uuid
 @as_declarative()
 class Base:
     __name__: str
-    id = Column(UUID(as_uuid=True), primary_key=True, default=generate_uuid)
+    uuid = Column(UUID(as_uuid=True), primary_key=True, default=generate_uuid)
     created = Column(DateTime, nullable=False, default=datetime.utcnow)
     updated = Column(DateTime, onupdate=datetime.utcnow)
 

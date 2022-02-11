@@ -10,17 +10,17 @@ class Settings(BaseSettings):
     APP_URL: str
     SERVER_HOST: str
 
-    USER = str
-    PASSWD = str
-    HOST = str
-    PORT = int
-    DB = str
+    USER: str
+    PASSWD: str
+    HOST: str
+    PORT: int
+    DB: str
 
     DEBUG: bool
 
     class Config:
         env_file = ".env"
-        case_senstive = True
+        case_sensitive = True
 
 
 settings = Settings()

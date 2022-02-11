@@ -61,7 +61,7 @@ def create_book(book: s.Book):
     except ValidationError as e:
         raise HTTPException(status_code=422, detail=e.errors())
     else:
-        return "Book added succefully"
+        return "Book added successfully"
 
 
 @book_api.put("/update_book", tags=["Books"])

@@ -14,3 +14,6 @@ async def get_db() -> Generator:
         yield db
     finally:
         db.close()
+
+
+# am i really using the generator if i keep just importing _db =db.Session!?!?

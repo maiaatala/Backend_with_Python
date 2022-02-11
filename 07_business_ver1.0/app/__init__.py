@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 
-# from fastapi.middleware.cors import CORSMiddleware # this is to set the http adress
+# from fastapi.middleware.cors import CORSMiddleware # this is to set the http address
 from app import api, core
+
+from app.database import init_db
 
 # from typing import List
 
@@ -10,6 +12,10 @@ from app import api, core
 # else:
 #     app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
-app = FastAPI(title=core.settings.PROJECT_NAME)
+desc = """ # Lava Jato Marketplace API """
+
+app = FastAPI(title=core.settings.PROJECT_NAME, description=desc)
 
 app.include_router(api.routers)
+
+init_db()
