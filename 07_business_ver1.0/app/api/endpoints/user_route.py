@@ -15,7 +15,7 @@ router = APIRouter(tags=["User"])
 @router.post("/registration")
 def user_registration(user_json: schema.UserBase):
     """User Registration:
-    - email: Not Null, unique Field
+    - username: Not Null, unique Field
     - password: Not Null str field.
     """
     try:

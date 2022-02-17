@@ -16,4 +16,4 @@ async def get_db() -> Generator:
         db.close()
 
 
-# am i really using the generator if i keep just importing _db =db.Session!?!?
+# am i really using the generator if i keep just importing _db = db.Session!?!?
