@@ -6,26 +6,26 @@ from typing import Optional
 # from app import util  # create util to validate stuff
 
 
-class UserBase(BaseModel):
+class CostumerBase(BaseModel):
     # full_name: str = Field(max_length=128)
-    username: str
-    password: str
+    email: EmailStr
+    name: str
 
 
-class PutUser(BaseModel):
+class PutCostumer(BaseModel):
     # full_name: Optional[str] = Field(max_length=128)
-    # email: Optional[EmailStr]
-    password: Optional[str]
+    email: Optional[EmailStr]
+    name: Optional[str]
 
     # class Config:
     #     orm_mode = True
 
 
-class GetUser(UserBase):
+class GetCostumer(CostumerBase):
     uuid: UUID
-    password: SecretStr
     created: datetime
     updated: Optional[datetime] = None
+    is_active: bool
 
     class Config:
         orm_mode = True

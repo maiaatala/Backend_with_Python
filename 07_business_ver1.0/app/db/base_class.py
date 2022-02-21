@@ -95,7 +95,7 @@ class Base:
     def get(self, id):
         try:
             session = Session()
-            data = session.query(self).filter_by(id=id).first()
+            data = session.query(self).filter_by(uuid=id).first()
         except SQLAlchemyError as e:
             session.rollback()
             raise e
@@ -105,9 +105,9 @@ class Base:
             session.close()
 
     @classmethod
-    def update(self, id, **kwargs):
+    def update(self, uuid, **kwargs):
         try:
-            data = self.get(id)
+            data = self.get(uuid)
             for k, v in kwargs.items():
                 if v and hasattr(data, k):
                     setattr(data, k, v)
