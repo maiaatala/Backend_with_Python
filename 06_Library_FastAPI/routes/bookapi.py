@@ -42,7 +42,7 @@ def search_book(id: int):
     """search Book by id"""
     try:
         book = m.Book.get(1)
-        ic(book.categories_books)
+        # ic(book.categories_books)
         return m.Book.get(id)
     except ValidationError as e:
         raise HTTPException(status_code=422, detail=e.errors())

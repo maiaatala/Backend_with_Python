@@ -13,6 +13,7 @@ class Book(Base):
 
     title = Column(String, nullable=False)
     subtitle = Column(String)
+    photo = Column(String)
     publish_date = Column(Date)
 
     # many boooks to one author

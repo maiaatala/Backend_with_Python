@@ -26,9 +26,10 @@ class CategoryInfo(BaseModel):
 
 
 class BookInfo(BaseModel):
+    id: int
     title: str
-    subtitle: Optional[str]
-    publish_date: date
+    # subtitle: Optional[str]
+    # publish_date: date
     # category: list[CategoryInfo]
 
     class Config:

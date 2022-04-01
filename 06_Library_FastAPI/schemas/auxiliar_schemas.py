@@ -5,6 +5,7 @@ from datetime import date
 
 
 class AuthorInfo(BaseModel):
+    id: Optional[int]
     name: Optional[str]
 
     class Config:  # duuno exactly why, but i need it
@@ -12,6 +13,7 @@ class AuthorInfo(BaseModel):
 
 
 class CategoryInfo(BaseModel):
+    id: Optional[int]
     name: str
 
     class Config:
@@ -26,10 +28,12 @@ class CategoryB_Info(BaseModel):
 
 
 class BookInfo(BaseModel):
+    id: int
     title: str
-    subtitle: Optional[str]
-    publish_date: date
-    author: AuthorInfo
+    photo: Optional[str]
+    # subtitle: Optional[str]
+    # publish_date: date
+    # author: AuthorInfo
 
     class Config:
         orm_mode = True

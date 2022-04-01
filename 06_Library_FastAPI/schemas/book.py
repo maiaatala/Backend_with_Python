@@ -9,6 +9,7 @@ from .auxiliar_schemas import CategoryB_Info, AuthorInfo
 
 class Book(BaseModel):
     title: str
+    photo: Optional[str]
     subtitle: Optional[str]
     publish_date: date
     author_id: int
@@ -19,6 +20,7 @@ class PutBook(BaseModel):
     title: Optional[str]
     subtitle: Optional[str]
     publish_date: Optional[date]
+    photo: Optional[str]
     author_id: Optional[int]
     # category: Optional[list[str]]
 
@@ -27,6 +29,7 @@ class GetBook(BaseModel):
     id: Optional[int] = None
     title: Optional[str] = None
     subtitle: Optional[str] = None
+    photo: Optional[str] = None
     publish_date: Optional[date] = None
     author: Optional[AuthorInfo] = None
     categories_books: list[Optional[CategoryB_Info]] = None
@@ -40,5 +43,6 @@ class GetBook(BaseModel):
 class SearchBook(BaseModel):
     title: Optional[str] = None
     subtitle: Optional[str] = None
+    photo: Optional[str] = None
     publish_date: Optional[date] = None
     # author: Optional[AuthorInfo] = None

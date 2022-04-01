@@ -27,3 +27,5 @@ app.include_router(r.cat_book_api)
 # lazy loading sql alchemy to show author's information when getting books
 # get author shows all the author's books
 # many to many table !
+
+# //! ADD ALEMBIC PARA ACRESCENTAR CAMPO IMG: STR PARA SALVAR LINK DE IMAGEM DE LIVRO.
